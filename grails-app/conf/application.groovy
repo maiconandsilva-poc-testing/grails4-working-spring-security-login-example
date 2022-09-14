@@ -14,7 +14,13 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**/js/**',       access: ['permitAll']],
 	[pattern: '/**/css/**',      access: ['permitAll']],
 	[pattern: '/**/images/**',   access: ['permitAll']],
-	[pattern: '/**/favicon.ico', access: ['permitAll']]
+	[pattern: '/**/favicon.ico', access: ['permitAll']],
+	[pattern: '/login/**', filters: 'none'],
+	[pattern: '/logout/**', filters: 'none'],
+	[pattern: '/zkau/**', filters: 'none'],
+	[pattern: '/zkcomet/**', filters: 'none'],
+	[pattern: '/static/*',  filters: 'none'],
+	[pattern: '/assets/**', filters: 'none'],
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [
@@ -23,7 +29,10 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/**/css/**',      filters: 'none'],
 	[pattern: '/**/images/**',   filters: 'none'],
 	[pattern: '/**/favicon.ico', filters: 'none'],
-	[pattern: '/**',             filters: 'JOINED_FILTERS']
+	[pattern: '/zkau/**', filters: 'none'],
+	[pattern: '/zkcomet/**', filters: 'none'],
+	[pattern: '/static/*',  filters: 'none'],
+	[pattern: '/**', filters: 'JOINED_FILTERS']
 ]
 
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/product'
